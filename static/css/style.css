@@ -3,5 +3,19 @@ html {
 }
 
  body {
-    background-color: #333;
+    background-image: url("/static/img/bg-anime.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
 }
+
+a:hover{
+ outline: 0! important;   
+}
+linear-gradient(
+	[ [ <angle> | to <side-or-corner> ] ,]? 
+	<color-stop>[, <color-stop>]+
+)
+
+<side-or-corner> = [left | right] || [top | bottom]

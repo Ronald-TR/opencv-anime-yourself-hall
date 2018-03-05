@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <title>Self.Animate()!</title>
+    <title>Animate</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/core.css') }}">  
 </head>
   <body>
-    <nav class="navbar navbar-expand navbar-light bg-faded" role="navigation">
+    <nav class="navbar navbar-expand navbar-dark bg-faded" role="navigation">
             <a href="/" class="nav-link navbar-brand">
                 <img src="{{ url_for('static', filename='svg/koinobori.svg') }}" width="50" height="50" alt="koinobori">
                 Animate!</a>
@@ -21,33 +21,42 @@
                 
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">Fork
-                    <img src="{{ url_for('static', filename='svg/github-logo.svg') }}" width="30" height="30" alt="github">
+                <a href="https://github.com/Ronald-TR/opencv-anime-yourself-hall" class="nav-link">Fork
+                    <img id="github-logo" class="svg gh-logo" src="{{ url_for('static', filename='svg/github-logo.svg') }}" width="30" height="30" alt="github">
                     me!</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">About</a>
+                <a href="#about" class="nav-link">About</a>
             </li>
         </ul>
     </nav> 
 
-    <div id="cartaz" class="container">
-        <h1>Choose wich you want to be!</h1>
-        <div class="row">
+    <div id="internal_body" class="">
+        <div class="container text-center">
+            <h1>Choose who you want to be</h1>
+            <p>This is an automathic generator</p>
+        </div>
+
+
+        <div id="cartaz" class="row">
             
-            <div id="narutator" class="container col-md-5">
-                <figure class="figure">
-                    <img src="{{ url_for('static', filename='img/narutator.png') }}" class="figure-img img-fluid rounded" alt="">
-                    <figcaption class="figure-caption text-xs-right text-right">Narutator</figcaption>
-                </figure>
-                    
+            <div id="narutator" class="col-md-5">
+                <img src="{{ url_for('static', filename='img/narutatorn.png') }}" class="img-fluid rounded" alt="">
+                <img src="{{ url_for('static', filename='img/naruto.png') }}" class="img-fluid rounded" alt="">
+                <a href="http://narutator.herokuapp.com/"><strong>&nbsp;&nbsp;&nbsp;Narutator</strong></a>
             </div>
-            <span class="col-md-1"></span>
+
+            
+
             <div id="smljackson" class="container col-md-5">
                 <p>L</p>
             </div>
         </div>        
         
+    </div>
+    <div id="about">
+        <h4>OpenCV based application</h4>
+        <p>Using responsivity in analysis to cut and fit the anime masks correctly (or try it)</p>
     </div>
 
 

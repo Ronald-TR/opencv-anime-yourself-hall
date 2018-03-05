@@ -1,12 +1,57 @@
 #cartaz{
-    margin: 4%;
-    background-color: aliceblue;
+    margin: 4%;    
+    border-radius: 1%;
+}
+#github-logo{
+    filter: invert(1);
 }
 
 #narutator{
-    /* background-color: bisque; */
+    position: relative;
+    height: 252px;
+    width: 450px;
+    margin: 0 auto;
 }
 
-#smljackson{
+#narutator a{
+    position: absolute;
+    top: 215px;
+    left: 40px;
+    color: rgba(235, 223, 233, 0.822);
+    width: 450px;
+    left:auto;
+
+    background-color: rgba(141, 25, 194, 0.466);
+}
+
+#narutator img{
+    position: absolute;
+    bottom: 0%;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+}
+
+#narutator :nth-child(2):hover{
+    opacity: 0;
+    
+}
+
+#smljackson{ 
     background-color: aquamarine;
 }
+
+#internal_body{ 
+    padding-bottom: 4%;
+}
+
+#internal_body :nth-child(1){ 
+    margin-top: 4%;
+}
+
+#about{
+    background-color: black;
+    align-self: baseline;
+    padding: 5%;
+}   
