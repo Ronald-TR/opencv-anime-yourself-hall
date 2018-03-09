@@ -20,8 +20,8 @@ def narutator():
     # # convert image FileStorage into an numpy array
     # np_image = np.fromstring(str_image, np.uint8)
     # img = cv2.imdecode(np_image, cv2.IMREAD_COLOR)
+
     img = Image.open(request.files.get('image-narutator').stream)
-    img.show()
 
     # call narutator
     try:
