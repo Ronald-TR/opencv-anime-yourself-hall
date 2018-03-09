@@ -43,12 +43,12 @@
                 <div id="narutator">
                     <img src="{{ url_for('static', filename='img/narutatorn.png') }}" class="img-fluid rounded" alt="">
                     <img src="{{ url_for('static', filename='img/naruto.png') }}" class="img-fluid rounded" alt="">
-                    <a href="http://narutator.herokuapp.com/"><strong>&nbsp;&nbsp;&nbsp;Try it! - Narutator page</strong></a>
+                    <a href="http://narutator.herokuapp.com/"><strong>&nbsp;&nbsp;&nbsp;Visit! - the Narutator page</strong></a>
                 </div>           
     
                 <form id="frmnaruto" action="/narutator" class="" method="POST", enctype="multipart/form-data">
-                    <label for="input-narutator" >Go here!</label>
-                    <input id="input-narutator" type="file" style="display: none">
+                    <label for="input-narutator" class="btn btn-success">Go here!</label>
+                    <input id="input-narutator" name="image-narutator" type="file" style="display: none">
                     <button id="btn-narutator" style="display: none" type="submit"></button>
                 </form>
                         

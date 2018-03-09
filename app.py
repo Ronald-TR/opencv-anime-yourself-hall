@@ -1,6 +1,9 @@
-from flask import Flask, render_template
-import core.lib_narutator
+from flask import Flask, render_template, request, send_file
+from PIL import Image
+from io import BytesIO, StringIO
 
+import numpy as np
+from core import lib_narutator
 import cv2
 
 app = Flask(__name__)
@@ -9,9 +12,29 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/narutator')
+@app.route('/narutator', methods=['POST'])
 def narutator():
-    return ''
+    # # extract the image as string data
+    # str_image = request.files.get('image-narutator').read()
+    
+    # # convert image FileStorage into an numpy array
+    # np_image = np.fromstring(str_image, np.uint8)
+    # img = cv2.imdecode(np_image, cv2.IMREAD_COLOR)
+    img = Image.open(request.files.get('image-narutator').stream)
+    img.show()
+
+    # call narutator
+    try:
+        narutator_img = lib_narutator.narutator(img)
+    except Exception as e:
+        return str(e)
+    # prepare image to be send by server
+    str_io = BytesIO()
+    narutator_img.save(str_io, 'JPEG', quality=70)
+    str_io.seek(0) 
+    
+    # send image back like a file 
+    return send_file(str_io, mimetype='image/jpeg')
 
 
 

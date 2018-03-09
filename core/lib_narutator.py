@@ -3,10 +3,12 @@ from PIL import Image, ImageFilter
 import numpy as np
 import os
 
+# recebe e retorna um arquivo do tipo PIL.Image()
 
 def narutator(imagem):
-
+    rosto = None
     imagemColorida = imagem
+    
     narutoFace = Image.open(os.path.join('static/img', 'naruto-uzumaki.png'))
 
     imagemDefault = np.asarray(imagemColorida).astype(np.uint8)
@@ -17,18 +19,21 @@ def narutator(imagem):
     # 1950x, 1000y
     cv2DetectFaces = cv2.CascadeClassifier(os.path.join('core', 'haarcascade_frontalface_default.xml'))
     facesEncontradas = cv2DetectFaces.detectMultiScale(cinza, 1.3, 5)
-
+    
     for x, y, w, h in facesEncontradas:
         rosto = imagemDefault[y: y + h, x: x + w]
+    
+    if not rosto:
+        raise Exception('Nenhum rosto encontrado')
 
     PILrosto = Image.fromarray(rosto).convert('RGB').resize((1400, 1400))
     rosto_largura, rosto_altura = PILrosto.size
     offset = (int(1950-rosto_largura/2), int(1000-rosto_altura/2))
     imgteste.paste(PILrosto, offset)
     total = Image.alpha_composite(imgteste, narutoFace)
-    return total
+    
+    return Image.fromarray(total)
 
-    # redimensionar altura 765 - 1680 = 915
-    # redimensionar largura 1400 - 2440 = 1040
+# redimensionar altura 765 - 1680 = 915
+# redimensionar largura 1400 - 2440 = 1040
 
-#narutator(Image.open('core/faustao.jpg')).show()
