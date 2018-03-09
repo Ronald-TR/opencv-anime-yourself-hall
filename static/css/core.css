@@ -2,6 +2,11 @@
     margin: 4%;    
     border-radius: 1%;
 }
+#cartaz :nth-child(1) form{
+    opacity: 1;
+    margin-left: 20px;
+}
+
 #github-logo{
     filter: invert(1);
 }
@@ -17,7 +22,7 @@
     position: absolute;
     top: 215px;
     left: 40px;
-    color: rgba(235, 223, 233, 0.822);
+    color: rgba(255, 255, 255, 0.678);
     width: 450px;
     left:auto;
 
@@ -34,9 +39,9 @@
 }
 
 #narutator :nth-child(2):hover{
-    opacity: 0;
-    
+    opacity: 0; 
 }
+
 
 #smljackson{ 
     background-color: aquamarine;

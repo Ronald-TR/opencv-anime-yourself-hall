@@ -39,14 +39,20 @@
 
 
         <div id="cartaz" class="row">
-            
-            <div id="narutator" class="col-md-5">
-                <img src="{{ url_for('static', filename='img/narutatorn.png') }}" class="img-fluid rounded" alt="">
-                <img src="{{ url_for('static', filename='img/naruto.png') }}" class="img-fluid rounded" alt="">
-                <a href="http://narutator.herokuapp.com/"><strong>&nbsp;&nbsp;&nbsp;Narutator</strong></a>
+            <div class="container col-md-5">
+                <div id="narutator">
+                    <img src="{{ url_for('static', filename='img/narutatorn.png') }}" class="img-fluid rounded" alt="">
+                    <img src="{{ url_for('static', filename='img/naruto.png') }}" class="img-fluid rounded" alt="">
+                    <a href="http://narutator.herokuapp.com/"><strong>&nbsp;&nbsp;&nbsp;Try it! - Narutator page</strong></a>
+                </div>           
+    
+                <form id="frmnaruto" action="/narutator" class="" method="POST", enctype="multipart/form-data">
+                    <label for="input-narutator" >Go here!</label>
+                    <input id="input-narutator" type="file" style="display: none">
+                    <button id="btn-narutator" style="display: none" type="submit"></button>
+                </form>
+                        
             </div>
-
-            
 
             <div id="smljackson" class="container col-md-5">
                 <p>L</p>
@@ -54,6 +60,7 @@
         </div>        
         
     </div>
+
     <div id="about">
         <h4>OpenCV based application</h4>
         <p>Using responsivity in analysis to cut and fit the anime masks correctly (or try it)</p>

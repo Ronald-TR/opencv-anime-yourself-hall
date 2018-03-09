@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+import core.lib_narutator
+
 import cv2
 
 app = Flask(__name__)
@@ -6,6 +8,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/narutator')
+def narutator():
+    return ''
 
 
 
