@@ -6,14 +6,13 @@ import os
 # recebe e retorna um arquivo do tipo PIL.Image()
 
 def narutator(imagem):
-    rosto = None
     imagemColorida = imagem
     
     narutoFace = Image.open(os.path.join('static/img', 'naruto-uzumaki.png'))
 
     imagemDefault = np.asarray(imagemColorida).astype(np.uint8)
     cinza = cv2.cvtColor(imagemDefault, cv2.COLOR_RGB2GRAY)
-
+    
     imgteste = Image.new('RGBA', narutoFace.size, (255, 255, 255, 255))
 
     # 1950x, 1000y
@@ -23,16 +22,16 @@ def narutator(imagem):
     for x, y, w, h in facesEncontradas:
         rosto = imagemDefault[y: y + h, x: x + w]
     
-    if not rosto:
+    if len(facesEncontradas) == 0:
         raise Exception('Nenhum rosto encontrado')
-
+    
     PILrosto = Image.fromarray(rosto).convert('RGB').resize((1400, 1400))
     rosto_largura, rosto_altura = PILrosto.size
     offset = (int(1950-rosto_largura/2), int(1000-rosto_altura/2))
     imgteste.paste(PILrosto, offset)
     total = Image.alpha_composite(imgteste, narutoFace)
     
-    return Image.fromarray(total)
+    return total
 
 # redimensionar altura 765 - 1680 = 915
 # redimensionar largura 1400 - 2440 = 1040

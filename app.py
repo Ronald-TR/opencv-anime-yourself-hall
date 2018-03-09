@@ -22,19 +22,19 @@ def narutator():
     # img = cv2.imdecode(np_image, cv2.IMREAD_COLOR)
 
     img = Image.open(request.files.get('image-narutator').stream)
-
     # call narutator
     try:
         narutator_img = lib_narutator.narutator(img)
     except Exception as e:
         return str(e)
+    
     # prepare image to be send by server
     str_io = BytesIO()
-    narutator_img.save(str_io, 'JPEG', quality=70)
+    narutator_img.save(str_io, 'PNG', quality=70)
     str_io.seek(0) 
-    
+
     # send image back like a file 
-    return send_file(str_io, mimetype='image/jpeg')
+    return send_file(str_io, mimetype='image/png')
 
 
 
