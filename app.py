@@ -5,6 +5,7 @@ from core import lib_narutator, hair_generator
 
 import numpy as np
 import cv2
+import os 
 
 app = Flask(__name__)
 
@@ -58,4 +59,5 @@ def lgenerator():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
