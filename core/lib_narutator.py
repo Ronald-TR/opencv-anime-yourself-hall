@@ -23,7 +23,7 @@ def narutator(imagem):
         rosto = imagemDefault[y: y + h, x: x + w]
     
     if len(facesEncontradas) == 0:
-        raise Exception('Nenhum rosto encontrado')
+        raise Exception('Nenhuma face encontrada')
     
     PILrosto = Image.fromarray(rosto).convert('RGB').resize((1400, 1400))
     rosto_largura, rosto_altura = PILrosto.size

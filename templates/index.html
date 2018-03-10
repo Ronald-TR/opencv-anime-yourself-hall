@@ -40,10 +40,10 @@
 
         <div id="cartaz" class="row">
             <div class="container col-md-5">
-                <div id="narutator">
+                <div class="slide-imgs" >
                     <img src="{{ url_for('static', filename='img/narutatorn.png') }}" class="img-fluid rounded" alt="">
                     <img src="{{ url_for('static', filename='img/naruto.png') }}" class="img-fluid rounded" alt="">
-                    <a href="http://narutator.herokuapp.com/"><strong>&nbsp;&nbsp;&nbsp;Visit! - the Narutator page</strong></a>
+                    <a href="http://narutator.herokuapp.com/"><strong>&nbsp;&nbsp;&nbsp;Narutator</strong></a>
                 </div>           
     
                 <form id="frmnaruto" action="/narutator" class="" method="POST", enctype="multipart/form-data">
@@ -53,10 +53,23 @@
                 </form>
                         
             </div>
+            <span class="col-md-1"></span>
 
-            <div id="smljackson" class="container col-md-5">
-                <p>L</p>
+            <div class="container col-md-5">
+                <div class="slide-imgs">
+                    <img src="{{ url_for('static', filename='img/samuel_l_jackson.png') }}" class="img-fluid rounded" alt="">
+                    <img src="{{ url_for('static', filename='img/rocky_l_.png') }}" class="img-fluid rounded" alt="">
+                    <a href="http://narutator.herokuapp.com/"><strong>&nbsp;&nbsp;&nbsp;L Generator</strong></a>
+                </div>
+
+                <form id="frm_lgenerator" action="/lgenerator" class="" method="POST", enctype="multipart/form-data">
+                    <label for="input-lgenerator" class="btn btn-warning">Go here!</label>
+                    <input id="input-lgenerator" name="image-lgenerator" type="file" style="display: none">
+                    <button id="btn-lgenerator" style="display: none" type="submit"></button>
+                </form>
             </div>
+
+                    
         </div>        
         
     </div>

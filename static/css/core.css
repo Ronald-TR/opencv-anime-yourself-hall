@@ -2,7 +2,7 @@
     margin: 4%;    
     border-radius: 1%;
 }
-#cartaz :nth-child(1) form{
+#cartaz form{
     opacity: 1;
     margin-left: 20px;
 }
@@ -11,14 +11,14 @@
     filter: invert(1);
 }
 
-#narutator{
+.slide-imgs{
     position: relative;
     height: 252px;
     width: 450px;
     margin: 0 auto;
 }
 
-#narutator a{
+.slide-imgs a{
     position: absolute;
     top: 215px;
     left: 40px;
@@ -29,7 +29,7 @@
     background-color: rgba(141, 25, 194, 0.466);
 }
 
-#narutator img{
+.slide-imgs img{
     position: absolute;
     bottom: 0%;
     -webkit-transition: opacity 1s ease-in-out;
@@ -38,13 +38,8 @@
     -o-transition: opacity 1s ease-in-out;
 }
 
-#narutator :nth-child(2):hover{
+.slide-imgs :nth-child(2):hover{
     opacity: 0; 
-}
-
-
-#smljackson{ 
-    background-color: aquamarine;
 }
 
 #internal_body{ 

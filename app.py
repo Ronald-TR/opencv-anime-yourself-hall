@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, send_file
 from PIL import Image
-from io import BytesIO, StringIO
+from io import BytesIO
+from core import lib_narutator, hair_generator
 
 import numpy as np
-from core import lib_narutator
 import cv2
 
 app = Flask(__name__)
@@ -35,6 +35,25 @@ def narutator():
 
     # send image back like a file 
     return send_file(str_io, mimetype='image/png')
+
+@app.route('/lgenerator', methods=['POST'])
+def lgenerator():
+
+    img = Image.open(request.files.get('image-lgenerator').stream)
+    # call lgenerator
+    try:
+        lgenerator_img = hair_generator.generate(img)
+    except Exception as e:
+        return str(e)
+    
+    # prepare image to be send by server
+    str_io = BytesIO()
+    lgenerator_img.save(str_io, 'PNG', quality=70)
+    str_io.seek(0) 
+
+    # send image back like a file 
+    return send_file(str_io, mimetype='image/png')
+
 
 
 
