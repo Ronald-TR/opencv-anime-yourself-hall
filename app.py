@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, send_file
 from PIL import Image
 from io import BytesIO
-from core import lib_narutator, hair_generator
+from core import libanimate as anim
 
 import numpy as np
 import cv2
@@ -25,7 +25,7 @@ def narutator():
     img = Image.open(request.files.get('image-narutator').stream)
     # call narutator
     try:
-        narutator_img = lib_narutator.narutator(img)
+        narutator_img = anim.narutator(img)
     except Exception as e:
         return str(e)
     
@@ -43,7 +43,7 @@ def lgenerator():
     img = Image.open(request.files.get('image-lgenerator').stream)
     # call lgenerator
     try:
-        lgenerator_img = hair_generator.generate(img)
+        lgenerator_img = anim.lgenerate(img)
     except Exception as e:
         return str(e)
     
